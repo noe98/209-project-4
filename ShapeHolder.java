@@ -1,13 +1,7 @@
+import java.util.Iterator;
+
 public class ShapeHolder implements Iterable<Shape>{
-    public ShapeHolder(){
-        Shape[] holder = new  Shape[50];
-    }
-
-    public boolean hasNext(){
-
-    }
-
-    public T next(){
-        
+    public Iterator<> iterator(){
+        return new ShapeHolderIterator<>(this);
     }
 }
