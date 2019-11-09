@@ -1,4 +1,4 @@
-//import shapes.*;
+import shapes.*;
 
 public class ShapeHolderTester {
    
