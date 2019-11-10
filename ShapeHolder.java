@@ -1,6 +1,6 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-// import shapes
+import shapes.*;
 
 public class ShapeHolder implements Iterable<Shape>{
     Shape[] shapes;
@@ -18,8 +18,8 @@ public class ShapeHolder implements Iterable<Shape>{
         return inst;
     }
 
-    public ShapeHolderIterator<> iterator(){
-        return new ShapeHolderIterator<>(this);
+    public ShapeHolderIterator iterator(){
+        return new ShapeHolderIterator(this);
     }
 
     public void addShape(Shape shape){
