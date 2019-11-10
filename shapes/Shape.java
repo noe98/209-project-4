@@ -1,3 +1,4 @@
+package shapes;
 /**
  * @author Griffin Noe
  * Shape.java
@@ -7,7 +8,7 @@
 
 
 
-abstract class Shape{
+public abstract class Shape{
     protected boolean filled;
     protected String color; 
     protected String shapeType;
