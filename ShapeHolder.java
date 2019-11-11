@@ -8,7 +8,7 @@ public class ShapeHolder implements Iterable<Shape>{
     private static ShapeHolder inst;
 
     private ShapeHolder(){
-        this.shapes = new Shapes[50];
+        this.shapes = new Shape[50];
     }
 
     public static ShapeHolder getInstance(){
@@ -37,7 +37,7 @@ public class ShapeHolder implements Iterable<Shape>{
     }
 }
 
-public class ShapeHolderIterator implements Iterator<Shape>{
+class ShapeHolderIterator implements Iterator<Shape>{
     int current = 0;
     ShapeHolder sh;
 
