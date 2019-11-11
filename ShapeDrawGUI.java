@@ -37,9 +37,10 @@ public class ShapeDrawGUI extends JFrame {
       
       // Add buttons and checkboxes below the canvas here
       JButton squareButton = new JButton("Square");
-      JButton circleButton = new JButton("Cirlce");
-      JButton triangleButton = new JButton("Triangle");
+      JButton circleButton = new JButton("Circle");
+      // JButton triangleButton = new JButton("Triangle");
       JButton rectangleButton = new JButton("Rectangle");
+      JButton ovalButton = new JButton("Oval");
       JCheckBox fillButton = new JCheckBox("Fill?");
       JButton redButton = new JButton("Red");
       JButton blueButton = new JButton("Blue");
@@ -60,9 +61,15 @@ public class ShapeDrawGUI extends JFrame {
          }
       };
 
-      ActionListener triangle_bl = new ActionListener(){
-         public void actionPerformed(ActionEvent e) {
-            canvas.setShapeType("triangle");
+      // ActionListener triangle_bl = new ActionListener(){
+      //    public void actionPerformed(ActionEvent e) {
+      //       canvas.setShapeType("triangle");
+      //    }
+      // };
+
+      ActionListener oval_bl = new ActionListener(){
+         public void actionPerformed(ActionEvent e){
+            canvas.setShapeType("oval");
          }
       };
 
@@ -127,8 +134,11 @@ public class ShapeDrawGUI extends JFrame {
       rectangleButton.addActionListener(rectangle_bl);
 
       positionConst.gridx=3;
-      add(triangleButton,positionConst);
-      triangleButton.addActionListener(triangle_bl);
+      // add(triangleButton,positionConst);
+      // triangleButton.addActionListener(triangle_bl);
+
+      add(ovalButton,positionConst);
+      ovalButton.addActionListener(oval_bl);
 
       positionConst.gridx=4;
       add(circleButton,positionConst);
