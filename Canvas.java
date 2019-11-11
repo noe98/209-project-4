@@ -3,13 +3,13 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Dimension;
 import java.awt.Point;
-import java.awt.Rectangle;
 import javax.swing.JPanel;
 
 import javafx.scene.shape.Circle;
 import shapes.Square;
 
 import java.awt.event.*;
+import shapes.*;
 
 
 public class Canvas extends JPanel implements MouseListener, MouseMotionListener {
@@ -17,7 +17,7 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
    // Variables
    private Point posStart;
    private Point posEnd;   
-   private Rectangle drawRect;
+   private java.awt.Rectangle drawRect;
    private String shapeType;
    private String colorType;
    private boolean fillType;
@@ -49,8 +49,7 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
    }
 
    public void setColorType(String colorType){
-      this.colorType = colorType;
-      c = Color.web(colorType);
+      c = (Color) Color.class.getField(colorType).get(null);
    }
 
    public void setFillType(boolean fillType){
@@ -64,7 +63,7 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
       
       // Draw any shapes in the shape holder here
       for(Shape shape: sh){
-         shape.drawGenericShape();
+         drawGenericShape(g,shape);
       }
       
       // Draw drag rectangle if it is there
@@ -74,45 +73,47 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
                     (int)drawRect.getWidth(), (int)drawRect.getHeight());
          
          // Draw the current shape here
-         ss.drawGenericShape();
+         drawGenericShape(g,ss);
       }
       
    }
    
    private void drawGenericShape(Graphics g, Shape s){
       g.setColor(c);
-      switch(s) {
-         case Square:
-            Square sr = (Square) s;
+      if(s.getShapeType().equals("Square")){
+         Square sr = (Square) s;
             if(fillType){
-               g.fillRect(sr.getXCoordinate(), sr.getYCoordinate(), sr.getWidth(), sr.getWidth());
+               g.fillRect(sr.getWidth(), sr.getWidth(), sr.getXCoordinate(), sr.getYCoordinate());
             }
             else{
-               g.drawRect(sr.getXCoordinate(), sr.getYCoordinate(), sr.getWidth(), sr.getWidth());
+               g.drawRect(sr.getWidth(), sr.getWidth(), sr.getXCoordinate(), sr.getYCoordinate());
             }
-         case Rectangle:
-            Rectangle r = (Rectangle) s;
+      }
+      else if(s.getShapeType().equals("Rectangle")){
+         Rectangle r = (Rectangle) s;
             if(fillType){
-               g.fillRect(r.getXCoordinate(), r.getYCoordinate(), r.getWidth(), r.getHeight());
+               g.fillRect(r.getWidth(), r.getHeight(), r.getXCoordinate(), r.getYCoordinate());
             }
             else{
-               g.drawRect(r.getXCoordinate(), r.getYCoordinate(), r.getWidth(), r.getHeight());
+               g.drawRect(r.getWidth(), r.getHeight(), r.getXCoordinate(), r.getYCoordinate());
             }
-         case Triangle:
-            Triangle t = (Triangle) t;
+      }
+      else if(s.getShapeType().equals("Triangle")){
+         Triangle t = (Triangle) s;
             if(fillType){
                g.fillPolygon(t.getXCoords(), t.getYCoords(), 3);
             }
             else{
                g.drawPolygon(t.getXCoords(), t.getYCoords(), 3);
             }
-         case Circle:
-            Circle c = (Circle) c;
+      }
+      else if(s.getShapeType().equals("Circle")){
+         Circle c = (Circle) s;
             if(fillType){
-               g.fillOval(c.getXCoordinate(), c.getYCoordinate(), c.getRadius()*2, c.getRadius()*2);
+               g.fillOval(c.getRadius()*2, c.getRadius()*2, c.getXCoordinate(), c.getYCoordinate());
             }
             else{
-               g.drawOval(c.getXCoordinate(), c.getYCoordinate(), c.getRadius()*2, c.getRadius()*2);
+               g.drawOval(c.getRadius()*2, c.getRadius()*2, c.getXCoordinate(), c.getYCoordinate());
             }
       }
    }
@@ -198,7 +199,7 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
    public void updateRectangle() {
       
       if (drawRect == null) {
-         drawRect = new Rectangle(0, 0, 0, 0);
+         drawRect = new java.awt.Rectangle(0, 0, 0, 0);
       }
       
       int width = (int)Math.abs(posEnd.getX() - posStart.getX());
