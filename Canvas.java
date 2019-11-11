@@ -69,11 +69,9 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
          g.setColor(colorSelect);
          g.drawRect((int)drawRect.getX(), (int)drawRect.getY(),
                     (int)drawRect.getWidth(), (int)drawRect.getHeight());
-         
          // Draw the current shape here
          drawGenericShape(g,ss);
       }
-      
    }
    
    private void drawGenericShape(Graphics g, Shape s){
@@ -83,29 +81,38 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
       if(s.getShapeType().equals("Square")){
          Square sr = (Square) s;
             if(s.getFilled()){
-               g.fillRect(sr.getWidth(), sr.getWidth(), sr.getXCoordinate(), sr.getYCoordinate());
+               g.fillRect(sr.getXCoordinate(), sr.getYCoordinate(),sr.getWidth(), sr.getWidth());
             }
             else{
-               g.drawRect(sr.getWidth(), sr.getWidth(), sr.getXCoordinate(), sr.getYCoordinate());
+               g.drawRect(sr.getXCoordinate(), sr.getYCoordinate(),sr.getWidth(), sr.getWidth());
             }
       }
       else if(s.getShapeType().equals("Rectangle")){
          Rectangle r = (Rectangle) s;
             if(s.getFilled()){
-               g.fillRect(r.getWidth(), r.getHeight(), r.getXCoordinate(), r.getYCoordinate());
+               g.fillRect(r.getXCoordinate(), r.getYCoordinate(),r.getWidth(), r.getHeight());
             }
             else{
-               g.drawRect(r.getWidth(), r.getHeight(), r.getXCoordinate(), r.getYCoordinate());
+               g.drawRect(r.getXCoordinate(), r.getYCoordinate(),r.getWidth(), r.getHeight());
             }
       }
-      else if(s.getShapeType().equals("Triangle")){
-         Triangle t = (Triangle) s;
-            if(s.getFilled()){
-               g.fillPolygon(t.getXCoords(), t.getYCoords(), 3);
-            }
-            else{
-               g.drawPolygon(t.getXCoords(), t.getYCoords(), 3);
-            }
+      // else if(s.getShapeType().equals("Triangle")){
+      //    Triangle t = (Triangle) s;
+      //       if(s.getFilled()){
+      //          g.fillPolygon(t.getXCoords(), t.getYCoords(), 3);
+      //       }
+      //       else{
+      //          g.drawPolygon(t.getXCoords(), t.getYCoords(), 3);
+      //       }
+      // }
+      else if(s.getShapeType().equals("Oval")){
+         Oval o = (Oval) s;
+         if(s.getFilled()){
+            g.fillOval(o.getXCoordinate(), o.getYCoordinate(), o.getRadius()*2, o.getRadius2()*2);
+         }
+         else{
+            g.drawOval(o.getXCoordinate(), o.getYCoordinate(), o.getRadius()*2, o.getRadius2()*2);
+         }
       }
       else if(s.getShapeType().equals("Circle")){
          Circle c = (Circle) s;
@@ -146,19 +153,14 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
          }
          else if(shapeType.toLowerCase() == "circle"){
             ss = new Circle(0,0,0,c,fillType);
-            // System.out.println(c);
          }
          else if(shapeType.toLowerCase() == "triangle"){
             ss = new Triangle(0,0,0,0,c,fillType);
          }
-
-         updateRectangle();
-
-         // ss = new Circle(1,1,1,"y",true);
-         // System.out.println(drawRect.get());
-
-         
-         
+         else if(shapeType.toLowerCase() == "oval"){
+            ss = new Oval(0,0,0,0,c,fillType);
+         }
+         updateRectangle();    
       }
    }
 
