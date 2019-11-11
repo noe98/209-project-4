@@ -1,3 +1,8 @@
+/**
+ * ShapeHolderTester.java
+ * Allows testing for the shapes package
+ */
+
 import shapes.*;
 
 public class ShapeHolderTester {
