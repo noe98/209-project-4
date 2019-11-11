@@ -1,3 +1,9 @@
+/**
+ * Canvas.java
+ * works on the back end of ShapeDrawGUI
+ * collects information from ShapeDrawGUI to draw shapes
+ */
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -8,7 +14,10 @@ import javax.swing.JPanel;
 import java.awt.event.*;
 import shapes.*;
 
-
+/**
+ * class Canvas
+ * collects information about the user's intentions
+ */
 public class Canvas extends JPanel implements MouseListener, MouseMotionListener {
    
    // Variables
@@ -25,6 +34,11 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
    final private Color colorSelect = new Color(0, 200, 200);
    
    // Constructors and setup methods
+   /**
+    * Public Canvas
+    * get information from super
+    * adds mouse listeners
+    */
    public Canvas() {
       super();
       this.setOpaque(true);
@@ -37,10 +51,22 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
       addMouseListener(this);      
       addMouseMotionListener(this);
    }
+
+   /**
+    * setShapeType setter
+    * @param shapeType
+    * sets type of shape
+    */
    
    public void setShapeType(String shapeType){
       this.shapeType = shapeType;
    }
+
+   /**
+    * setColorType setter
+    * @param colorType
+    * sets one of the six colors
+    */
 
    public void setColorType(String colorType){
       try {
@@ -50,11 +76,23 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
       }
    }
 
+   /**
+    * setFillType setter
+    * @param fillType
+    * sets to true or fals
+    */
+
    public void setFillType(boolean fillType){
       this.fillType = fillType;
    }
 
    // Listeners
+
+   /**
+    * paintComponent
+    * @param Graphics g
+    * drawing shapes in the shape holder
+    */
    @Override
    public void paintComponent(Graphics g) {
       super.paintComponent(g);
@@ -65,6 +103,7 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
       }
       
       // Draw drag rectangle if it is there
+      
       if (drawRect != null) {
          g.setColor(colorSelect);
          g.drawRect((int)drawRect.getX(), (int)drawRect.getY(),
