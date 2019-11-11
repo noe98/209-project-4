@@ -112,7 +112,12 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
          drawGenericShape(g,ss);
       }
    }
-   
+   /**
+    * drawGenericShape
+    * @param Graphics g
+    * @param Shape s
+    * designates type of shape drawn
+    */
    private void drawGenericShape(Graphics g, Shape s){
       g.setColor(s.getColor());
 
@@ -176,7 +181,12 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
    @Override
    public void mouseMoved(MouseEvent e) {      
    }
-   
+   /**
+    * mousePressed
+    * @param MouseEvent e
+    * creating new shapes from established shape selections
+    * calls updateRectangle();
+    */
    @Override
    public void mousePressed(MouseEvent e) {
       if (e.getButton() == MouseEvent.BUTTON1) {
@@ -203,6 +213,11 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
       }
    }
 
+   /**
+    * mouseReleased
+    * @param MouseEvent e
+    * updates rectangle, allows setup for new shape to be drawn
+    */
    @Override
    public void mouseReleased(MouseEvent e) {
       if (e.getButton() == MouseEvent.BUTTON1) {
@@ -222,6 +237,12 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
       
    }
    
+   /**
+    * mouseDragged
+    * @param MouseEvent e
+    * gets x and y coordinates of rectangle
+    */
+
    @Override
    public void mouseDragged(MouseEvent e) {
       if (drawRect != null) {
@@ -231,6 +252,12 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
    }
 
    // Needed for mouse listeners
+
+   /**
+    * mouseClicked
+    * @param MouseEvent e
+    * allows right-click to remove the last shape
+    */
    @Override
    public void mouseClicked(MouseEvent e) {
       if (e.getButton() == MouseEvent.BUTTON3) {
