@@ -56,7 +56,7 @@ public class Square extends Shape{
         return width;
     }
 
-    public void update(int width, int xCoordinate, int yCoordinate){
+    public void update(int width, int height, int xCoordinate, int yCoordinate){
         this.width = width;
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;

@@ -78,5 +78,5 @@ public abstract class Shape{
         return yCoordinate;
     }
 
-    abstract public void update();
+    abstract public void update(int width, int height, int xCoordinate, int yCoordinate);
 }
