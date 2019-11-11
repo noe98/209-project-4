@@ -1,25 +1,43 @@
+/**
+ * ShapeDrawGUI.java
+ * This file creates the canvas, buttons, and action listeners for each button
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * class: ShapeDrawGUI
+ */
 public class ShapeDrawGUI extends JFrame {
     
    // Class Variables  
    private Canvas canvas;
+
+   /**
+    * ShapeDrawGUI constructor
+    */
       
    public ShapeDrawGUI() {
       
-      // Use a GridBagLayout
+      /**
+       * Use a GridBagLayout 
+       */
       setLayout(new GridBagLayout());
       GridBagConstraints positionConst = new GridBagConstraints();
       positionConst.insets = new Insets(10, 10, 10, 10);
       
-      // Set up the window
+      /** 
+       * Set up the window
+       */
       setSize(1100,800);
       setTitle("Draw Shapes");
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       
-      // Add the canvas
+      /**
+       * Add to the canvas
+       */
       positionConst.gridx = 0;
       positionConst.gridy = 0;
       positionConst.fill = GridBagConstraints.BOTH;
@@ -35,7 +53,9 @@ public class ShapeDrawGUI extends JFrame {
       positionConst.gridy = 1;
       positionConst.weighty = 0;
       
-      // Add buttons and checkboxes below the canvas here
+      /**
+       * Add buttons and checkboxes below the canvas here
+       */
       JButton squareButton = new JButton("Square");
       JButton circleButton = new JButton("Circle");
       // JButton triangleButton = new JButton("Triangle");
@@ -48,6 +68,10 @@ public class ShapeDrawGUI extends JFrame {
       JButton yellowButton = new JButton("Yellow");
       JButton magentaButton = new JButton("Magenta");
       JButton cyanButton = new JButton("Cyan");
+
+      /**
+       * Action listeners created to implement the GUI
+       */
 
       ActionListener square_bl = new ActionListener(){
          public void actionPerformed(ActionEvent e) {
@@ -121,6 +145,11 @@ public class ShapeDrawGUI extends JFrame {
          }
       };
 
+
+      /**
+       * Assigning positions for shapes based on action listeners
+       * and shape selections
+       */
       positionConst.gridy=1;
       positionConst.gridwidth = 1;
 
@@ -175,6 +204,12 @@ public class ShapeDrawGUI extends JFrame {
       yellowButton.addActionListener(yellow_bl);
    }
    
+
+   /**
+    * main method
+    * utilizes ShapeDrawGUI to create visible shapes
+    * @param args
+    */
    public static void main(String[] args) {
        
       // Main frame
