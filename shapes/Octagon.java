@@ -74,6 +74,13 @@ public class Octagon extends Shape{
         return height;
     }
 
+    public void update(int width, int height, int xCoordinate, int yCoordinate){
+        this.width = width;
+        this.height = height;
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
+    }
+
 
     /**
      * toString prints attributes of Octagon

@@ -37,6 +37,13 @@ public class Oval extends Circle{
     public void setRadius2(int radius2){
         this.radius2 = radius2;
     }
+
+    public void update(int radius, int radius2, int xCoordinate, int yCoordinate){
+        this.radius = radius;
+        this.radius2 = radius2;
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
+    }
     
 /**
  * toString method

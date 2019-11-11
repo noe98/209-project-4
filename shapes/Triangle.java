@@ -68,6 +68,21 @@ public class Triangle extends Shape{
         return height;
     }
 
+    public int[] getXCoords(){
+        return xCoords;
+    }
+
+    public int[] getYCoords(){
+        return yCoords;
+    }
+
+    public void update(int width, int height, int xCoordinate, int yCoordinate){
+        this.width = width;
+        this.height = height;
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
+    }
+
     /**
      * toString prints attributes of triangle
      * @return string of attributes in proper format

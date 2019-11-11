@@ -77,4 +77,6 @@ public abstract class Shape{
     public int getYCoordinate(){
         return yCoordinate;
     }
+
+    abstract public void update();
 }

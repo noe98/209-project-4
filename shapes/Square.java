@@ -55,6 +55,12 @@ public class Square extends Shape{
     public int getWidth(){
         return width;
     }
+
+    public void update(int width, int xCoordinate, int yCoordinate){
+        this.width = width;
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
+    }
         
     /**
      * toString prints attributes of Square

@@ -37,8 +37,8 @@ public class Rectangle extends Shape{
 
         xCoords = new int[4];
         xCoords[0]= xCoordinate;
-        xCoords[1]=xCoordinate + width;
-        xCoords[2]=xCoordinate + width;
+        xCoords[1]= xCoordinate + width;
+        xCoords[2]= xCoordinate + width;
         xCoords[3] = xCoordinate;
     
         yCoords = new int[4];
@@ -69,6 +69,13 @@ public class Rectangle extends Shape{
 
     public int getHeight(){
         return height;
+    }
+
+    public void update(int width, int height, int xCoordinate, int yCoordinate){
+        this.width = width;
+        this.height = height;
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
     }
 
     /**

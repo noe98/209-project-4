@@ -36,6 +36,12 @@ public class Circle extends Shape{
         this.radius = radius;
     }
 
+    public void update(int radius, int xCoordinate, int yCoordinate){
+        this.radius = radius;
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
+    }
+
 /**
  * toString method
  * @return string with information about the shape
