@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class ShapeDrawGUI extends JFrame {
     
@@ -47,43 +48,121 @@ public class ShapeDrawGUI extends JFrame {
       JButton magentaButton = new JButton("Magenta");
       JButton cyanButton = new JButton("Cyan");
 
+      ActionListener square_bl = new ActionListener(){
+         public void actionPerformed(ActionEvent e) {
+            canvas.setShapeType("square");
+         }
+      };
+
+      ActionListener circle_bl = new ActionListener(){
+         public void actionPerformed(ActionEvent e) {
+            canvas.setShapeType("circle");
+         }
+      };
+
+      ActionListener triangle_bl = new ActionListener(){
+         public void actionPerformed(ActionEvent e) {
+            canvas.setShapeType("triangle");
+         }
+      };
+
+      ActionListener rectangle_bl = new ActionListener(){
+         public void actionPerformed(ActionEvent e) {
+            canvas.setShapeType("rectangle");
+         }
+      };
+
+      ActionListener red_bl = new ActionListener(){
+         public void actionPerformed(ActionEvent e) {
+            canvas.setColorType("red");
+         }
+      };
+
+      ActionListener blue_bl = new ActionListener(){
+         public void actionPerformed(ActionEvent e) {
+            canvas.setColorType("blue");
+         }
+      };
+
+      ActionListener green_bl = new ActionListener(){
+         public void actionPerformed(ActionEvent e) {
+            canvas.setColorType("green");
+         }
+      };
+
+      ActionListener yellow_bl = new ActionListener(){
+         public void actionPerformed(ActionEvent e) {
+            canvas.setColorType("yellow");
+         }
+      };
+
+      ActionListener magenta_bl = new ActionListener(){
+         public void actionPerformed(ActionEvent e) {
+            canvas.setColorType("magenta");
+         }
+      };
+
+      ActionListener cyan_bl = new ActionListener(){
+         public void actionPerformed(ActionEvent e) {
+            canvas.setColorType("cyan");
+         }
+      };
+
+      ActionListener fill_bl = new ActionListener(){
+         public void actionPerformed(ActionEvent e) {
+            canvas.setFillType(fillButton.isSelected());
+         }
+      };
+
       positionConst.gridy=1;
       positionConst.gridwidth = 1;
 
       positionConst.gridx=1;
       add(squareButton,positionConst);
+      squareButton.addActionListener(square_bl);
+      
 
       positionConst.gridx=2;
       add(rectangleButton,positionConst);
+      rectangleButton.addActionListener(rectangle_bl);
 
       positionConst.gridx=3;
       add(triangleButton,positionConst);
+      triangleButton.addActionListener(triangle_bl);
 
       positionConst.gridx=4;
       add(circleButton,positionConst);
+      circleButton.addActionListener(circle_bl);
 
       positionConst.gridx=5;
       add(fillButton,positionConst);
+      fillButton.addActionListener(fill_bl);
 
       positionConst.gridy=2;
 
       positionConst.gridx=1;
       add(redButton,positionConst);
+      redButton.addActionListener(red_bl);
 
       positionConst.gridx=2;
       add(blueButton,positionConst);
+      blueButton.addActionListener(blue_bl);
 
       positionConst.gridx=3;
       add(greenButton,positionConst);
+      greenButton.addActionListener(green_bl);
 
       positionConst.gridx=4;
       add(cyanButton,positionConst);
+      cyanButton.addActionListener(cyan_bl);
 
       positionConst.gridx=5;
       add(magentaButton,positionConst);
+      magentaButton.addActionListener(magenta_bl);
 
       positionConst.gridx=6;
       add(yellowButton,positionConst);
+      yellowButton.addActionListener(yellow_bl);
    }
    
    public static void main(String[] args) {
