@@ -77,20 +77,39 @@ public class ShapeHolder implements Iterable<Shape>{
 
 
 /**
- * 
+ * ShapeHolderIterator implements Iterator<Shape>
+ * sets curret to zero
+ * creates ShapeHolder
  */
 
 class ShapeHolderIterator implements Iterator<Shape>{
     int current = 0;
     ShapeHolder sh;
 
+    /**
+     * ShapeHolderIterator
+     * @param ShapeHolder sh
+     * sets sh
+     */
     public ShapeHolderIterator(ShapeHolder sh){
         this.sh = sh;
     }
 
+    /**
+     * hasNext
+     * @return boolean of if the shape is followed by a shape in the counter
+     */
+
     public boolean hasNext(){
         return (current < sh.counter);
     }
+
+    /**
+     * Shape next
+     * if the shape does not have a next, @throw exception
+     * else
+     * @return sh.shapes and add to current
+     */
 
     public Shape next(){
         if(!hasNext()){
