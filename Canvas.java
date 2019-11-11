@@ -265,6 +265,11 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
          repaint();
       }
    }
+
+   /**
+    * updateRectangle
+    * sets height, width, left, and top of the rectangle for drawings
+    */
    
    // Updates the selection rectangle based on the first and current mouse positions
    public void updateRectangle() {
