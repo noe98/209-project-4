@@ -1,12 +1,27 @@
+/**
+ * ShapeHolder.java
+ * an object that holds all the shapes, is iterable through all types of shapes
+ */
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import shapes.*;
+
+/**
+ * ShapeHolder class
+ * iterable object shape
+ */
 
 public class ShapeHolder implements Iterable<Shape>{
     Shape[] shapes;
     int counter = 0;
     private static ShapeHolder inst;
 
+
+    /**
+     * ShapeHolder
+     * creates an array of shapes and sets its max to 50
+     */
     private ShapeHolder(){
         this.shapes = new Shape[50];
     }
