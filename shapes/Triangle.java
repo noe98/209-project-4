@@ -37,13 +37,13 @@ public class Triangle extends Shape{
 
         xCoords = new int[3];
         xCoords[0]= xCoordinate + width/2;
-        xCoords[1]=xCoordinate + width;
-        xCoords[2]=xCoordinate;
+        xCoords[1]= xCoordinate + width;
+        xCoords[2]= xCoordinate;
     
         yCoords = new int[3];
         yCoords[0]= yCoordinate;
-        yCoords[1]=yCoordinate + height;
-        yCoords[2]=yCoordinate + height;
+        yCoords[1]= yCoordinate + height;
+        yCoords[2]= yCoordinate + height;
     
         shapeType = "Triangle";
     }
