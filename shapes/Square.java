@@ -27,7 +27,7 @@ public class Square extends Shape{
      * @param filled: whether the shape is filled in or the color is just for the outline
      */
 
-    public Square(int width, int xCoordinate, int yCoordinate, String color, boolean filled){
+    public Square(int width, int xCoordinate, int yCoordinate, java.awt.Color color, boolean filled){
         super(xCoordinate, yCoordinate, color, filled);
         this.width = width;
 

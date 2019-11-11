@@ -16,7 +16,7 @@ public class Oval extends Circle{
      * @param color designates a color for the shape
      * @param filled booelan describing whether the shape's color fills the shape or provides an outline
      */
-    public Oval(int radius, int radius2, int xCoordinate, int yCoordinate, String color, boolean filled){
+    public Oval(int radius, int radius2, int xCoordinate, int yCoordinate, java.awt.Color color, boolean filled){
         super(radius, xCoordinate, yCoordinate, color, filled);
         this.radius2 = radius2;
         shapeType = "Oval";

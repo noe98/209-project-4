@@ -4,13 +4,13 @@ public class ShapeHolderTester {
    
    
    public static void main(String[] args) {
-      //ShapeHolder sh = ShapeHolder.getInstance();
+      // ShapeHolder sh = ShapeHolder.getInstance();
       
-      //sh.addShape(new Square());
-      //sh.addShape(new Circle());
+      // sh.addShape(new Square(1,1,1,"y",true));
+      // sh.addShape(new Circle(1,1,1,"y",true));
       
-      ///for (GeometricShape shp : sh) {
+      // for (Shape shp : sh) {
       //   System.out.println(shp);
-      //}
+      // }
    }
 }

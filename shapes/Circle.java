@@ -14,7 +14,7 @@ public class Circle extends Shape{
  * @param color designates a color for the shape
  * @param filled booelan describing whether the shape's color fills the shape or provides an outline
  */
-    public Circle(int radius, int xCoordinate, int yCoordinate, String color, boolean filled){
+    public Circle(int radius, int xCoordinate, int yCoordinate, java.awt.Color color, boolean filled){
         super(xCoordinate,yCoordinate,color,filled);
         this.radius = radius;
         shapeType = "Circle";
@@ -37,7 +37,7 @@ public class Circle extends Shape{
     }
 
     public void update(int radius, int radius2, int xCoordinate, int yCoordinate){
-        this.radius = radius;
+        this.radius = radius/2;
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
     }

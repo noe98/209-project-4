@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ShapeDrawGUI",
+            "request": "launch",
+            "mainClass": "ShapeDrawGUI"
+        }
+    ]
+}

@@ -8,9 +8,9 @@ package shapes;
 
 
 
-public abstract class Shape{
+public abstract class AbstractShape{
     protected boolean filled;
-    protected java.awt.Color color; 
+    protected String color; 
     protected String shapeType;
     protected int xCoordinate;
     protected int yCoordinate;
@@ -23,7 +23,7 @@ public abstract class Shape{
      * @param color determines shape color
      * @param filled determines whether the shape is filled with color or only outlined
      */
-    public Shape(int xCoordinate, int yCoordinate, java.awt.Color color, boolean filled){
+    public AbstractShape(int xCoordinate, int yCoordinate, String color, boolean filled){
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
         this.color = color;
@@ -50,7 +50,7 @@ public abstract class Shape{
      * getColor method
      * @return color of shape
      */
-    public java.awt.Color getColor(){
+    public String getColor(){
         return color;
     }
 
