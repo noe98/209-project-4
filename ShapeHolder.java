@@ -26,6 +26,13 @@ public class ShapeHolder implements Iterable<Shape>{
         this.shapes = new Shape[50];
     }
 
+    /**
+     * ShapeHolder getInstance
+     * instance getter
+     * because it is a singleton, we create a new instance of the ShapeHolder
+     * @return inst
+     */
+
     public static ShapeHolder getInstance(){
         if(inst == null){
             inst = new ShapeHolder();
@@ -33,9 +40,20 @@ public class ShapeHolder implements Iterable<Shape>{
         return inst;
     }
 
+    /**
+     * ShapeHolderIterator
+     * @return new ShapeHolderIterator
+     */
+
     public ShapeHolderIterator iterator(){
         return new ShapeHolderIterator(this);
     }
+
+    /**
+     * addShape
+     * @param Shape shape
+     * adds new shapes into array if they can fit
+     */
 
     public void addShape(Shape shape){
         if(counter < 50){
@@ -44,6 +62,11 @@ public class ShapeHolder implements Iterable<Shape>{
         }
     }
 
+    /**
+     * removeShape
+     * removes shapes from the counter
+     */
+
     public void removeShape(){
         if(counter > 0){
             this.shapes[counter] = null;
@@ -51,6 +74,11 @@ public class ShapeHolder implements Iterable<Shape>{
         }   
     }
 }
+
+
+/**
+ * 
+ */
 
 class ShapeHolderIterator implements Iterator<Shape>{
     int current = 0;
