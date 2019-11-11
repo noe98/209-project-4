@@ -58,6 +58,18 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
       // Draw any sort of shape to the canvas
       
    //}
+   private void drawGenericShape(Graphics g, Shape s){
+      switch(s) {
+         case Square:
+            //Draw Square
+         case Rectangle:
+            //Draw Rectangle
+         case Triangle:
+            //Draw Triangle
+         case Circle:
+            //Drawn Circle
+      }
+   }
    
    // Needed for mouse listeners
    @Override
@@ -69,9 +81,7 @@ public class Canvas extends JPanel implements MouseListener, MouseMotionListener
    }
    
    @Override
-   public void mouseMoved(MouseEvent e) {
-      
-      
+   public void mouseMoved(MouseEvent e) {      
    }
    
    @Override
